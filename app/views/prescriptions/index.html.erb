@@ -1,0 +1,35 @@
+<h1>Listing prescriptions</h1>
+
+<table>
+  <tr>
+    <th>Customer</th>
+    <th>Product</th>
+    <th>Dosage</th>
+    <th>Limit</th>
+    <th>Expiry date</th>
+    <th>Prescriber</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @prescriptions.each do |prescription| %>
+  <tr>
+    <td><%= prescription.customer.name %></td>
+    <td><%= prescription.product.name %></td>
+    <td><%= prescription.dosage %></td>
+    <td><%= prescription.limit %></td>
+    <td><%= prescription.expirydate %></td>
+    <td><%= prescription.prescriber %></td>
+    <td><%= link_to 'Show', prescription %></td>
+    <td><%= link_to 'Edit', edit_prescription_path(prescription) %></td>
+    <td><%= link_to 'Destroy', prescription, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Prescription', new_prescription_path %>
+
+

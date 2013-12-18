@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @customer.address %>
+ </p>
+ <p>
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@customer.latitude}%2C#{@customer.longitude}" %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @customer.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @customer.email %>
+</p>
+
+<p>
+  <b>Sex:</b>
+  <%= @customer.sex %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @customer.age %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%= @customer.dob %>
+</p>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

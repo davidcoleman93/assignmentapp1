@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignmentapp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="banner">
+	<%= image_tag("pharmacylogo.jpg", :size => "100x50") %>
+	<%= @page_title || "David Coleman's Pharmacy" %>
+</div>
+
+
+
+<div id="nav">
+    <ul>
+		<% if !signed_in? %>
+			<li><%= link_to "Sign In", signin_path %></li>		
+		<% else %>
+			<li>Signed in as <%= @current_customer.name %></li>
+			<li><%= link_to "Sign Out", signout_path %></li>
+
+		<%end %>
+		<li><%= link_to "Home", root_path %></li>
+		<li><%= link_to "Customers", customers_path %></li>
+		<li><%= link_to "Products", products_path %></li>
+		<li><%= link_to "Carts", carts_path%></li>
+		<li><%= link_to "Orders", storeorders_path%></li>
+		<li><%= link_to "Prescriptions", prescriptions_path%></li>
+		<li><%= mail_to "davida.coleman17@gmail.com", "Contact us" %></li>	
+    </ul>
+</div>
+
+<% if !flash.nil? %>
+	<% flash.each do |key, value| %>
+		<div class="flash <%= key %>"><%= value %></div>
+	<% end %>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>

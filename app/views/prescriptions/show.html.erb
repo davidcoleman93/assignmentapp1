@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Customer:</b>
+  <%= @prescription.customer.name %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%= @prescription.product.name %>
+</p>
+
+<p>
+  <b>Dosage:</b>
+  <%= @prescription.dosage %>
+</p>
+
+<p>
+  <b>Limit:</b>
+  <%= @prescription.limit %>
+</p>
+
+<p>
+  <b>Expirydate:</b>
+  <%= @prescription.expirydate %>
+</p>
+
+<p>
+  <b>Prescriber:</b>
+  <%= @prescription.prescriber %>
+</p>
+
+
+<%= link_to 'Edit', edit_prescription_path(@prescription) %> |
+<%= link_to 'Back', prescriptions_path %>

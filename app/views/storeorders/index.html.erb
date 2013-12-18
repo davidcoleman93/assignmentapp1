@@ -1,0 +1,27 @@
+<h1>Listing storeorders</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @storeorders.each do |storeorder| %>
+  <tr>
+    <td><%= storeorder.name %></td>
+    <td><%= storeorder.address %></td>
+    <td><%= storeorder.email %></td>
+    <td><%= link_to 'Show', storeorder %></td>
+    <td><%= link_to 'Edit', edit_storeorder_path(storeorder) %></td>
+    <td><%= link_to 'Destroy', storeorder, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Storeorder', new_storeorder_path %>

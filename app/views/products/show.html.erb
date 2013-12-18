@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @product.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @product.description %>
+</p>
+
+<p>
+  <b>Brand:</b>
+  <%= image_tag(@product.brand, :size => "50x50", :alt=> "Image not found") %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @product.price %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @product.size %>
+</p>
+
+<p>
+  <b>Prescriptionreq:</b>
+  <%= @product.prescriptionreq %>
+</p>
+
+<h2>Please leave a comment:</h2>
+	<%= form_for([@product, Post.new]) do |f| %>
+		<%= f.text_area :content, :rows => 3 %>
+			<div class="actions">
+				<%= f.submit "Post a Comment" %>
+			</div>
+	<% end %>
+
+<% if @product.posts.empty? %>
+	<h3>You are the first to comment </h3>
+<% else %>	
+<h2>What others felt about this:</h2>
+	 <% @product.posts.reverse.each do |post| %>
+		<p><%= post.content %>
+		Posted <%= time_ago_in_words(post.created_at) %> ago by
+				<%= post.customer.name %></p>
+				<%= link_to "destroy", [@product, post], method: :delete, data: { confirm: 'Are you sure?'} %>
+		<% end %>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

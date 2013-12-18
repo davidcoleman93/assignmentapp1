@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer_id: 1
+  product_id: 1
+  date: 2013-10-10
+  deliverycharge: MyString
+  total: 9.99
+
+two:
+  customer_id: 1
+  product_id: 1
+  date: 2013-10-10
+  deliverycharge: MyString
+  total: 9.99

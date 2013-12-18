@@ -1,0 +1,137 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+#flash{
+	color :blue
+}
+
+
+#banner {
+ overflow: hidden;
+		padding: 5em 0em;
+		background: #8DCB89 url(images/pharmacylogo.jpg) no-repeat center;
+		background-size: cover;
+
+  img {
+    float: left;
+  }
+}
+
+
+#columns {
+  background: #242424;
+
+  #main {
+    #main {
+	margin-left: 17em;
+	padding: 1em;
+	background: blue;
+}
+
+  }
+
+//#START:side
+  #side {
+    float: left;
+    padding: 1em 2em;
+    width: 13em;
+    background: yellow;
+
+/* START_HIGHLIGHT */
+    form, div {
+      display: inline;
+    }  
+ 
+    input {
+      font-size: small;
+    }
+
+    #cart {
+      font-size: smaller;
+      color:     black;
+
+      table {
+        border-top:    1px dotted #595;
+        border-bottom: 1px dotted #595;
+        margin-bottom: 10px;
+      }
+    }
+
+/* END_HIGHLIGHT */
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+
+        a {
+          color: #33FFFF;
+          font-size: small;
+        }
+      }
+    }
+  }
+//#END:side
+} #end columns
+
+#nav {
+  float: right;
+}
+
+#nav {
+  background-color: #989898;
+  padding: 0 0.7em;
+  white-space: nowrap;
+}
+
+#nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+#nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+#nav ul li a {
+  display: inline-block;
+		margin-left: 0.50em;
+		padding: 1em 1.5em;
+		letter-spacing: 0.20em;
+		text-decoration: none;
+		font-size: 0.90em;
+		font-weight: 600;
+		text-transform: uppercase;
+		outline: 0;
+		color: #FFF;
+}
+#nav .current_page_item a
+	{
+		background: #ff6816;
+		border-radius: 8px;
+		color: #0000FF;
+	}
+
+
+#nav ul li a:visited {
+  color: #0000FF;
+}
+
+#nav ul li a:hover {
+  text-decoration: underline;
+  }
+
